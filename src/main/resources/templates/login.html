@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:if="${param.error}">
+    无效的用户名或者密码
+</div>
+<div th:if="${param.logout}">
+    你已经登出
+</div>
+<form th:action="@{/login}" method="post">
+    <div>
+        <div>
+            <span>用户名:</span>
+            <span><input type="text" name="username"></span>
+        </div>
+        <div>
+            <span>密码:</span>
+            <span><input type="text" name="password"></span>
+        </div>
+        <div>
+            <span>记住我:</span>
+            <span><input type="checkbox" name="remember-me"></span>
+        </div>
+        <div>
+            <span><input type="submit" value="login"></span>
+        </div>
+    </div>
+</form>
+</body>
+</html>
